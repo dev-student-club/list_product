@@ -11,24 +11,26 @@ class ListProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.all(16),
-                child: Text(
-                  'List \nProduct',
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'serif',
-                  ),
-                ),
-              ),
-              _listProduct(context),
-            ],
-          ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildTitle(),
+            _listProduct(context),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTitle() {
+    return const Padding(
+      padding: EdgeInsets.all(16),
+      child: Text(
+        'List Product',
+        style: TextStyle(
+          fontSize: 32,
+          fontWeight: FontWeight.bold,
+          fontFamily: 'serif',
         ),
       ),
     );
@@ -44,22 +46,23 @@ class ListProduct extends StatelessWidget {
           return Text('Error: ${snapshot.error}');
         } else {
           final List<Product> data = snapshot.data!;
-          return ListView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: data.length,
-            itemBuilder: (context, index) {
-              return GestureDetector(
-                child: _itemProduct(context, data[index]),
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return ProductDetail(data[index]);
-                    },
-                  ));
-                },
-              );
-            },
+          return Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: data.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  child: _itemProduct(context, data[index]),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return ProductDetail(data[index]);
+                      },
+                    ));
+                  },
+                );
+              },
+            ),
           );
         }
       },
@@ -83,8 +86,8 @@ class ListProduct extends StatelessWidget {
                   child: Image.network(
                     data.thumbnail,
                     fit: BoxFit.fitHeight,
-                    height: MediaQuery.of(context).size.height / 6,
-                    width: MediaQuery.of(context).size.width / 2,
+                    height: 120, // Adjust the height as needed
+                    width: 160, // Adjust the width as needed
                   ),
                 ),
               ),
