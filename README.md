@@ -52,7 +52,7 @@ Make sure you have Flutter and Dart installed on your machine.
     cd project-name
     ```
     
-3. Run the this command line:
+3. Run this command line:
 
     ```bash
     flutter pub get
