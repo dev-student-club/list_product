@@ -1,6 +1,25 @@
 # list_product_json
 
-A new Flutter project.
+Project Structure 
+```
+.
+├── lib
+│   ├── detail
+│   │   └── product_detail.dart
+│   ├── home
+│   │   └── list_product.dart
+│   ├── model
+│   │   └── product.dart
+│   └── splash_screen
+│       └── splash_screen.dart
+├── android
+├── assets
+│   └── local_data.json
+├── ios
+├── test
+├── web
+├── pubspec.yaml
+```
 
 ## Getting Started
 
