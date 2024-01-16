@@ -18,6 +18,8 @@ This project aims to create a simple Flutter application for displaying a list o
 Recommended project folder structure:
 
 ```
+
+```
 .
 ├── lib
 │   ├── detail
@@ -60,4 +62,4 @@ Make sure you have Flutter and Dart installed on your machine.
     ```
 
 4. The project will open on your emulator or physical device.
-```
+
