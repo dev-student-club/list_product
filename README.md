@@ -1,6 +1,6 @@
-# Project Name
+# List Product
 
-Brief description of your project.
+Starter Project For Student Club
 
 ## Table of Contents
 
