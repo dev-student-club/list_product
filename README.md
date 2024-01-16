@@ -1,35 +1,63 @@
-# list_product_json
+```markdown
+# Project Name
 
-Project Structure 
+Brief description of your project.
+
+## Table of Contents
+
+- [About](#about)
+- [Project Structure](#project-structure)
+- [How to Run the Project](#how-to-run-the-project)
+
+## About
+
+This project aims to create a simple Flutter application for displaying a list of products and their details. The primary goals include showcasing the implementation of Flutter widgets, handling navigation, and for a starter fetching data from a local JSON file.
+
+## Project Structure
+
+Recommended project folder structure:
+
 ```
 .
 ├── lib
 │   ├── detail
-│   │   └── product_detail.dart
+│   │   └── product_detail.dart: Displays the product detail page.
 │   ├── home
-│   │   └── list_product.dart
+│   │   └── list_product.dart: Displays the product list page.
 │   ├── model
-│   │   └── product.dart
-│   └── splash_screen
-│       └── splash_screen.dart
+│   │   └── product.dart: Model for representing product data.
+│   │
+│   ├── main.dart: Main file for application routing.
 ├── android
-├── assets
-│   └── local_data.json
 ├── ios
+├── assets
+│   └── local_data.json: JSON file as a source of local data.
 ├── test
 ├── web
-├── pubspec.yaml
+├── pubspec.yaml: Configuration file for managing packages.
 ```
 
-## Getting Started
+## How to Run the Project
 
-This project is a starting point for a Flutter application.
+Make sure you have Flutter and Dart installed on your machine.
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone this repository:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+    ```bash
+    git clone https://github.com/dev-student-club/list_product.git
+    ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Open the terminal and navigate to the project directory:
+
+    ```bash
+    cd project-name
+    ```
+
+3. Run the application:
+
+    ```bash
+    flutter run
+    ```
+
+4. The project will open on your emulator or physical device.
+```
