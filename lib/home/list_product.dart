@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:list_product_json/data/product.dart';
-import 'package:list_product_json/detail/product_detail.dart';
 
 class ListProduct extends StatelessWidget {
   const ListProduct({super.key});
@@ -54,11 +53,11 @@ class ListProduct extends StatelessWidget {
                 return GestureDetector(
                   child: _itemProduct(context, data[index]),
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return ProductDetail(data[index]);
-                      },
-                    ));
+                    Navigator.pushNamed(
+                      context,
+                      '/detail',
+                      arguments: data[index],
+                    );
                   },
                 );
               },

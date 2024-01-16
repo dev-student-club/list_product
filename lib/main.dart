@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:list_product_json/data/product.dart';
+import 'package:list_product_json/detail/product_detail.dart';
 import 'package:list_product_json/home/list_product.dart';
 
 void main() {
@@ -8,13 +10,25 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(useMaterial3: true),
       debugShowCheckedModeBanner: false,
-      home: const ListProduct(),
+      initialRoute: '/home',
+      routes: {
+        '/home': (context) => const ListProduct(),
+        '/detail': (context) {
+          final arguments = ModalRoute.of(context)?.settings.arguments;
+          if (arguments is Product) {
+            return ProductDetail(product: arguments);
+          } else {
+            // Handle the case when arguments are not of type Product
+            // You can navigate to an error page or handle it in another way
+            return Container();
+          }
+        },
+      },
     );
   }
 }

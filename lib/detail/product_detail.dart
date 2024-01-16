@@ -3,7 +3,8 @@ import 'package:list_product_json/data/product.dart';
 
 class ProductDetail extends StatelessWidget {
   final Product product;
-  const ProductDetail(this.product, {super.key});
+
+  const ProductDetail({required this.product, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
