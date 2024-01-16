@@ -1,4 +1,3 @@
-```markdown
 # Project Name
 
 Brief description of your project.
@@ -16,8 +15,6 @@ This project aims to create a simple Flutter application for displaying a list o
 ## Project Structure
 
 Recommended project folder structure:
-
-```
 
 ```
 .
@@ -54,12 +51,18 @@ Make sure you have Flutter and Dart installed on your machine.
     ```bash
     cd project-name
     ```
+    
+3. Run the this command line:
 
-3. Run the application:
+    ```bash
+    flutter pub get
+    ```
+
+4. Run the application:
 
     ```bash
     flutter run
     ```
 
-4. The project will open on your emulator or physical device.
+5. The project will open on your emulator or physical device.
 
