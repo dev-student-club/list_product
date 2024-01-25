@@ -137,11 +137,12 @@ Make sure you have Flutter and Dart installed on your machine.
     ```
 
 4. Run the application:
-![Demo Video](assets/app_demo.gif)
 
     ```bash
     flutter run
     ```
 
 5. The project will open on your emulator or physical device.
+
+![Demo Video](assets/app_demo.gif)
 
