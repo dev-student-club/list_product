@@ -1,10 +1,11 @@
 import 'dart:convert';
 
+// Class representing the response structure from the API
 class BaseProductResponse {
-  final List<Product>? products;
-  final int? total;
-  final int? skip;
-  final int? limit;
+  final List<Product>? products; // List of products
+  final int? total; // Total number of products
+  final int? skip; // Number of products skipped
+  final int? limit; // Limit on the number of products
 
   BaseProductResponse({
     this.products,
@@ -13,11 +14,14 @@ class BaseProductResponse {
     this.limit,
   });
 
+  // Factory method to create an instance of BaseProductResponse from raw JSON
   factory BaseProductResponse.fromRawJson(String str) =>
       BaseProductResponse.fromJson(json.decode(str));
 
+  // Convert the object to raw JSON string
   String toRawJson() => json.encode(toJson());
 
+  // Factory method to create an instance of BaseProductResponse from JSON
   factory BaseProductResponse.fromJson(Map<String, dynamic> json) =>
       BaseProductResponse(
         products: json["products"] == null
@@ -29,6 +33,7 @@ class BaseProductResponse {
         limit: json["limit"],
       );
 
+  // Convert the object to JSON
   Map<String, dynamic> toJson() => {
         "products": products == null
             ? []
@@ -39,18 +44,19 @@ class BaseProductResponse {
       };
 }
 
+// Class representing a product
 class Product {
-  final int? id;
-  final String? title;
-  final String? description;
-  final int? price;
-  final double? discountPercentage;
-  final double? rating;
-  final int? stock;
-  final String? brand;
-  final String? category;
-  final String? thumbnail;
-  final List<String>? images;
+  final int? id; // Product ID
+  final String? title; // Product title
+  final String? description; // Product description
+  final int? price; // Product price
+  final double? discountPercentage; // Discount percentage on the product
+  final double? rating; // Product rating
+  final int? stock; // Product stock quantity
+  final String? brand; // Product brand
+  final String? category; // Product category
+  final String? thumbnail; // Product thumbnail image URL
+  final List<String>? images; // List of product images
 
   Product({
     this.id,
@@ -66,10 +72,13 @@ class Product {
     this.images,
   });
 
+  // Factory method to create an instance of Product from raw JSON
   factory Product.fromRawJson(String str) => Product.fromJson(json.decode(str));
 
+  // Convert the object to raw JSON string
   String toRawJson() => json.encode(toJson());
 
+  // Factory method to create an instance of Product from JSON
   factory Product.fromJson(Map<String, dynamic> json) => Product(
         id: json["id"],
         title: json["title"],
@@ -86,6 +95,7 @@ class Product {
             : List<String>.from(json["images"]!.map((x) => x)),
       );
 
+  // Convert the object to JSON
   Map<String, dynamic> toJson() => {
         "id": id,
         "title": title,

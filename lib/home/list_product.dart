@@ -22,6 +22,7 @@ class ListProduct extends StatelessWidget {
     );
   }
 
+  // Widget to build the title of the screen
   Widget _buildTitle() {
     return const Padding(
       padding: EdgeInsets.all(16),
@@ -36,6 +37,7 @@ class ListProduct extends StatelessWidget {
     );
   }
 
+  // Widget to display the list of products
   Widget _listProduct(BuildContext context) {
     return Consumer<GetProductsProvider>(builder: (context, provider, child) {
       switch (provider.state) {
@@ -52,6 +54,7 @@ class ListProduct extends StatelessWidget {
     });
   }
 
+  // Widget to build the list of products
   Widget _buildProductList(List<Product> data) {
     return Expanded(
       child: ListView.builder(
@@ -74,6 +77,7 @@ class ListProduct extends StatelessWidget {
     );
   }
 
+  // Widget to build an individual product item
   Widget _itemProduct(BuildContext context, Product data) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16, right: 16, left: 16),

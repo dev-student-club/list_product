@@ -12,6 +12,7 @@ class ProductDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Create a ChangeNotifierProvider for GetDetailProductProvider
     return ChangeNotifierProvider<GetDetailProductProvider>(
       create: (context) =>
           GetDetailProductProvider(id, apiService: ApiService()),
@@ -30,6 +31,7 @@ class ProductDetail extends StatelessWidget {
           ),
           body: Consumer<GetDetailProductProvider>(
             builder: (context, value, _) {
+              // Build UI based on the state of GetDetailProductProvider
               switch (value.state) {
                 case ResultState.loading:
                   return const Center(
@@ -48,6 +50,7 @@ class ProductDetail extends StatelessWidget {
     );
   }
 
+  // Build the content of the product detail page
   SingleChildScrollView _buildContent(BuildContext context, Product product) {
     return SingleChildScrollView(
       child: Padding(
@@ -56,6 +59,7 @@ class ProductDetail extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 16),
+            // Display the main product image
             Container(
               alignment: Alignment.center,
               decoration: BoxDecoration(
@@ -72,6 +76,7 @@ class ProductDetail extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
+            // Display product information
             Text(
               product.title ?? '',
               style: const TextStyle(
@@ -82,6 +87,7 @@ class ProductDetail extends StatelessWidget {
             Text('Brand: ${product.brand}'),
             Text('Category: ${product.category}'),
             const SizedBox(height: 16),
+            // Display ratings, stock, and price information
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -121,8 +127,10 @@ class ProductDetail extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
+            // Display product description
             Text(product.description ?? ''),
             const SizedBox(height: 16),
+            // Display additional images of the product
             SizedBox(
               height: MediaQuery.of(context).size.height / 8,
               child: ListView.builder(

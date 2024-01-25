@@ -15,24 +15,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-        create: (_) => GetProductsProvider(apiService: ApiService()),
-        child: MaterialApp(
-          theme: ThemeData(useMaterial3: true),
-          debugShowCheckedModeBanner: false,
-          initialRoute: '/home',
-          routes: {
-            '/home': (context) => const ListProduct(),
-            '/detail': (context) {
-              final arguments = ModalRoute.of(context)?.settings.arguments;
-              if (arguments is String) {
-                return ProductDetail(id: arguments);
-              } else {
-                // Handle the case when arguments are not of type Product
-                // You can navigate to an error page or handle it in another way
-                return Scaffold(appBar: AppBar(), body: Container());
-              }
-            },
+      // Create an instance of GetProductsProvider and provide the ApiService
+      create: (_) => GetProductsProvider(apiService: ApiService()),
+      child: MaterialApp(
+        // Enable Material 3 theme
+        theme: ThemeData(useMaterial3: true),
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/home',
+        routes: {
+          '/home': (context) => const ListProduct(), // Home screen route
+          '/detail': (context) {
+            // Retrieve arguments passed during navigation
+            final arguments = ModalRoute.of(context)?.settings.arguments;
+
+            if (arguments is String) {
+              // If arguments are of type String, navigate to ProductDetail with id
+              return ProductDetail(id: arguments);
+            } else {
+              // Handle the case when arguments are not of type String
+              // You can navigate to an error page or handle it in another way
+              return Scaffold(appBar: AppBar(), body: Container());
+            }
           },
-        ));
+        },
+      ),
+    );
   }
 }
