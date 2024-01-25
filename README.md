@@ -6,6 +6,7 @@ Starter Project For Student Club
 
 - [About](#about)
 - [Project Structure](#project-structure)
+- [API Documentation](#api-documentation)
 - [How to Run the Project](#how-to-run-the-project)
 
 ## About
@@ -35,6 +36,83 @@ Recommended project folder structure:
 ├── web
 ├── pubspec.yaml: Configuration file for managing packages.
 ```
+
+## API Documentation
+
+### Base URL
+- Base URL: `https://dummyjson.com`
+
+### 1. Get All Products
+- Endpoint: `/products`
+- Method: `GET`
+- Description: Get all products available.
+- Example: `https://dummyjson.com/products`
+
+### 2. Get Single Product
+- Endpoint: `/products/{id}`
+- Method: `GET`
+- Description: Get details of a specific product.
+- Parameters:
+  - `{id}`: The unique identifier for the product.
+- Example: `https://dummyjson.com/products/1`
+
+### 3. Search Products
+- Endpoint: `/products/search`
+- Method: `GET`
+- Description: Search for products based on a query string.
+- Parameters:
+  - `q`: The search query.
+- Example: `https://dummyjson.com/products/search?q=Laptop`
+
+### Response Format
+- The response for all endpoints will be in JSON format.
+
+### Example Response for Get All Products:
+```json
+{
+  "products": [
+    // ... (list of products)
+  ],
+  "total": 100,
+  "skip": 0,
+  "limit": 30
+}
+```
+
+### Example Response for Get Single Product:
+```json
+{
+  "id": 1,
+  "title": "iPhone 9",
+  "description": "An apple mobile which is nothing like apple",
+  "price": 549,
+  "discountPercentage": 12.96,
+  "rating": 4.69,
+  "stock": 94,
+  "brand": "Apple",
+  "category": "smartphones",
+  "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+  "images": [
+    // ... (list of image URLs)
+  ]
+}
+```
+
+### Example Response for Search Products:
+```json
+{
+  "products": [
+    // ... (list of products)
+  ],
+  "total": 3,
+  "skip": 0,
+  "limit": 3
+}
+```
+
+### Notes
+- All HTTP methods (GET) are supported.
+- You can use either HTTP or HTTPS for your requests.
 
 ## How to Run the Project
 
