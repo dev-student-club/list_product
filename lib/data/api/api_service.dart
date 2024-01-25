@@ -5,7 +5,7 @@ import 'package:list_product_json/data/product.dart';
 
 class ApiService {
   // Base URL for the API
-  static const String _baseUrl = 'https://dummyjson.com/';
+  static const String _baseUrl = 'https://dummyjson.com';
 
   // Headers for handling CORS (Cross-Origin Resource Sharing)
   var headers = {
