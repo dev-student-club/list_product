@@ -144,5 +144,5 @@ Make sure you have Flutter and Dart installed on your machine.
 
 5. The project will open on your emulator or physical device.
 
-![Demo Video](assets/app_demo.gif)
+<img src="assets/app_demo.gif" alt="Demo Video" width="400"/>
 
