@@ -20,18 +20,27 @@ Recommended project folder structure:
 ```
 .
 ├── lib
+│   ├── helpers
+│   │   └── result_state.dart: Enum to represent the different states of an asynchronous operation
 │   ├── detail
 │   │   └── product_detail.dart: Displays the product detail page.
 │   ├── home
 │   │   └── list_product.dart: Displays the product list page.
-│   ├── model
+│   ├── data
+│   │   └── api
+│   │   │   └── api_service.dart: setup API services.
+│   │   │ 
 │   │   └── product.dart: Model for representing product data.
+│   ├── providers
+│   │   └── get_detail_product_providers.dart: providers class for fetching API products.
+│   │   │ 
+│   │   └── get_products_providers.dart: providers class for fetching API detail products.
 │   │
 │   ├── main.dart: Main file for application routing.
 ├── android
 ├── ios
 ├── assets
-│   └── local_data.json: JSON file as a source of local data.
+│   └── app_demo.gif: for show demo app on readme.md file on github.
 ├── test
 ├── web
 ├── pubspec.yaml: Configuration file for managing packages.
