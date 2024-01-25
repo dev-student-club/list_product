@@ -83,7 +83,7 @@ class ListProduct extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
                   child: Image.network(
-                    data.thumbnail,
+                    data.thumbnail ?? '',
                     fit: BoxFit.fitHeight,
                     height: 120, // Adjust the height as needed
                     width: 160, // Adjust the width as needed
@@ -96,7 +96,7 @@ class ListProduct extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      data.title,
+                      data.title ?? '',
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
                       style: const TextStyle(

@@ -37,7 +37,7 @@ class ProductDetail extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8),
                     child: Image.network(
-                      product.thumbnail,
+                      product.thumbnail ?? '',
                       fit: BoxFit.fill,
                       height: MediaQuery.of(context).size.height / 4,
                     ),
@@ -45,7 +45,7 @@ class ProductDetail extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  product.title,
+                  product.title ?? '',
                   style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -93,13 +93,13 @@ class ProductDetail extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 16),
-                Text(product.description),
+                Text(product.description ?? ''),
                 const SizedBox(height: 16),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 8,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: product.images.length,
+                    itemCount: product.images?.length ?? 0,
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return Padding(
@@ -113,7 +113,7 @@ class ProductDetail extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
                             child: Image.network(
-                              product.images[index],
+                              product.images?[index] ?? '',
                               fit: BoxFit.cover,
                               width: MediaQuery.of(context).size.width / 2,
                             ),
